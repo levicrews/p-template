@@ -1,73 +1,64 @@
-\documentclass[11pt,notes=hide,aspectratio=169,mathserif]{beamer}
-
-% PACKAGES
-\usepackage{graphics}  % Support for images/figures
-\usepackage{graphicx}  % Includes the \resizebox command
-\usepackage{url}	   % Includes \urldef and \url commands
-\usepackage{natbib}
-\usepackage{bibentry}  % Includes the \nobibliography command
-\usepackage{verbatim}  %Supports comments
-\usepackage{booktabs} %Supports \toprule, \bottomrule, etc in tables
-\usepackage{etoolbox}  %Supports toggle commands
-\usepackage{datetime}
-\usepackage{bm}	%Supports bold math \bm
-
-% PACKAGES (that should already be included by your LyX document settings)
-\usepackage{amsfonts}  % Lots of stuff, including \mathbb 
-\usepackage{amsmath}   % Standard math package
-\usepackage{amsthm}    % Includes the comment functions
-
-% CUSTOM DEFINITIONS
-\def\newblock{} %Get beamer to cooperate with BibTeX
-\linespread{1.2}
+\documentclass[10pt,aspectratio=169]{beamer}
+\setbeameroption{hide notes}
+% \setbeameroption{show notes}
+\usepackage{lgc-slides}
 
 % IDENTIFYING INFORMATION
-\title[project]{project}
-\author[Dingel \& friends ]{Jonathan I. Dingel (Chicago Booth) \\ coauthors}
-\date{\monthname[\the\month] \the\year}
+\title{\large{\texttt{<title>}}}
+% \subtitle{}
+\author{Levi Crews (UCLA) \newline \texttt{coauthor} (\texttt{<affiliation>})}
+% \institute{\vfill Any views expressed in this paper do not necessarily represent those of the Federal Reserve System or its Staff.}
+\date{\bigskip \monthname[\the\month] \the\year}
 
-% THEMATIC OPTIONS
-\setbeamercovered{transparent}
-\usetheme{metropolis}
-\usecolortheme{default}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]{}
-
-% BACKUP SLIDE NUMBERING
-\usepackage{appendixnumberbeamer}
-
-%SETTINGS
-\newtoggle{shortertalk}
-\togglefalse{shortertalk}
+% TOGGLES
+\newtoggle{handout}
+%
+\newtoggle{30min}
+\newtoggle{60min}
+\newtoggle{90min}
+%
+\newtoggle{levi}
+\newtoggle{coauthor}
+%
+% pick which length and presenter
+% \toggletrue{30min}
+% \toggletrue{90min}
+% \toggletrue{levi30min}
+% \iftoggle{levi30min}{
+% 	\toggletrue{levi}
+% }{}
 
 \begin{document}
 
 %---------------------------------------------------------------------
 \begin{frame}[plain]
 \titlepage
-\note{
-	\begin{itemize}
-	\end{itemize}
-}
 \end{frame}
 %---------------------------------------------------------------------
-%\input{sections/intro.tex}
+% \input{sections/intro.tex}
+%---------------------------------------------------------------------
+% \input{sections/facts.tex}
+%---------------------------------------------------------------------
+% \input{sections/model.tex}
+%---------------------------------------------------------------------
+% \input{sections/quantification.tex}
+%---------------------------------------------------------------------
+% \input{sections/counterfactuals.tex}
 %---------------------------------------------------------------------
 
-%---------------------------------------------------------------------
-\begin{frame}[plain]
-\begin{center}{\LARGE Thank you}\end{center}
-\end{frame}
-%---------------------------------------------------------------------
+\iftoggle{levi}{
+	\begin{frame}[plain]
+		\begin{center}{\LARGE \textbf{Thank you!}} \\ {\url{lgcrews@econ.ucla.edu}}\end{center}
+	\end{frame}
+}{}
 
-
-%\beginbackup
+\section{Appendix}
 \appendix
-%\input{sections/appendix.tex}
+% \input{sections/appx.tex}
 
-%\bibliographystyle{../bib/aeanobold}
-%\nobibliography{../bib/bib.bib}
-%\backupend
-
+\typeout{}
+% \bibliography{../bib}
+% \bibliographystyle{aer}
+% \backupend
 
 \end{document}

@@ -1,0 +1,87 @@
+\usefonttheme[onlymath]{serif}
+
+% PACKAGES
+\usepackage{graphicx}                   % Includes the \resizebox command
+\usepackage[export]{adjustbox}          % add "phantom" option to \includegraphics
+\usepackage{subcaption}
+\usepackage{url}	                    % Includes \urldef and \url commands
+\usepackage{natbib}
+\usepackage{bibentry}                   % Includes the \nobibliography command
+\usepackage{verbatim}                   % Supports comments
+\usepackage{dirtytalk}
+\usepackage{booktabs}                   % Supports \toprule, \bottomrule, etc in tables
+\usepackage[flushleft]{threeparttable}
+\usepackage{array}
+\usepackage{etoolbox}                   % Supports toggle commands
+\usepackage{datetime}
+\usepackage{bm}	                        % Supports bold math \bm
+\usepackage{amsfonts}                   % Lots of stuff, including \mathbb
+\usepackage{amsmath}                    % Standard math package
+\usepackage{amsthm}                     % Includes the comment functions
+\usepackage{tcolorbox}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tkz-graph}                  % for drawing discrete graphs
+\usepackage{progressbar}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{appendixnumberbeamer}       % backup slide numbering
+\definecolor{mOrange}{HTML}{EB811B}     % same as "alert" color
+\definecolor{mBlue}{HTML}{1B85EB}
+\definecolor{mGreen}{HTML}{00856D}
+\definecolor{mRed}{HTML}{BB001B}
+\definecolor{mPurple}{HTML}{811BEB}
+\definecolor{mGray}{HTML}{969696}
+\definecolor{mYellow}{HTML}{E7B31A}     % color match rice share in India, then darken a bit
+\hypersetup{colorlinks,linkcolor=,citecolor=}
+\let\oldcite=\cite
+\let\oldcitet=\citet
+\let\oldcitep=\citep
+\renewcommand{\citet}[2][]{\textcolor{mBlue}{\oldcitet[#1]{#2}}}
+\renewcommand{\citep}[2][]{\textcolor{mBlue}{\oldcitep[#1]{#2}}}
+\renewcommand{\cite}[2][]{\textcolor{mBlue}{\oldcite[#1]{#2}}}
+
+% CUSTOM DEFINITIONS
+\def\newblock{} %Get beamer to cooperate with BibTeX
+\linespread{1.3}
+
+% COMMANDS
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% https://tex.stackexchange.com/questions/321048/checklist-in-beamer-using-enumitem-package?noredirect=1&lq=1
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+    \hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+\newcommand{\notimplies}{\;\not\nobreak\!\!\!\!\implies}
+% https://tex.stackexchange.com/a/143102/195397
+\makeatletter
+\newlength\beamerleftmargin
+\setlength\beamerleftmargin{\Gm@lmargin}
+\makeatother
+% \imageframe{img_name}
+% from https://github.com/mattzinc900well/cousteau
+\newcommand{\imageframe}[1]{%
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[at = (current page.center), xshift = 0cm] (cover) {%
+                \includegraphics[keepaspectratio, width=\paperwidth, height=\paperheight]{#1}
+            };
+        \end{tikzpicture}
+    \end{frame}%
+}
+
+% THEMATIC OPTIONS
+\setbeamercovered{invisible}
+\usetheme{metropolis}
+\usecolortheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]{}
