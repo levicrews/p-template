@@ -1,57 +1,42 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx}
-\usepackage[onehalfspacing]{setspace}
-\usepackage[unicode=true,
- bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
- {hyperref}
-\usepackage{verbatim}
-\usepackage{appendix}
-\usepackage{mathtools}
-\usepackage{url}
-\usepackage[authoryear]{natbib}
-\usepackage{tikz}
-\usepackage{booktabs} %Package with \toprule, \midrule, \bottomrule
-\usepackage{placeins} %Package with \FloatBarrier command
-\usepackage{physics}
-\usepackage[en-US]{datetime2}
+\usepackage{lgc-preamble}
 
-\hypersetup{
-	pdftex,
-    pdfauthor={Jonathan I. Dingel and friends},     % author
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links
-    citecolor=black,        % color of links to bibliography
-    urlcolor=blue           % color of external links
+% METADATA
+\title{\textbf{\texttt{<title>}}\thanks{
+    We thank \texttt{<people>} and seminar participants at \texttt{<places>}
+    for helpful comments. We thank \texttt{<funding/hosting>}.
+    \texttt{<RAs>} provided excellent research assistance.
+    All remaining errors are our own.
+    % Any views expressed in this paper are those of the authors and
+    % do not necessarily reflect those of the Federal Reserve System or its staff.
+}}
+\author{
+    Levi Crews\thanks{\crewsemail}\\ {UCLA}
+    \and
+    \texttt{coauthor}\thanks{\texttt{<coauthor email>}}\\ {\texttt{<affiliation>}}
 }
 
-% CUSTOM DEFINITIONS
-\urldef{\dingelhomepage}\url{http://faculty.chicagobooth.edu/jonathan.dingel/}
-\urldef{\dingelemail}\url{jdingel@chicagobooth.edu}
-\newtheorem{proposition}{Proposition}
-
-% IDENTIFYING INFORMATION
-\title{A paper}
-\author{Jonathan I. Dingel\thanks{\dingelemail} \\ Chicago Booth and NBER}
-\date{\monthname[\the\month] \the\year}
-
+\date{\the\day \ \monthname[\the\month] \the\year}
 
 \begin{document}
-\bibliographystyle{../bib/aeanobold}
+\maketitle
+\vspace{-2mm}
+\begin{center}
+    \textbf{Please \href{https://www.levicrews.com/files/p-<template>_paper.pdf}{click here} for the latest draft.}
+\end{center}
+\vspace{2mm}
 
 % -----------------------------------------------
 % 	ABSTRACT
 % -----------------------------------------------
 
 \begin{abstract}
-%\noindent  \input{./sections/abstract.tex}
+\noindent \input{sections/abstract.tex}
 \end{abstract}
-\vspace{1cm}
+\vspace{0.5cm}
 {\small
-\noindent \textit{Keywords}:  \\
-\textit{JEL codes}: 
+% \noindent \textit{Keywords}:  \\
+\noindent \textit{JEL codes}: \input{sections/jelcodes.tex}
 }
 \thispagestyle{empty}
 \newpage
@@ -61,16 +46,19 @@
 % 	BODY
 % -----------------------------------------------
 
-%\input{./sections/intro.tex}
-%\input{./sections/theory.tex}
-%\input{./sections/estimation.tex}
-%\input{./sections/discussion.tex}
+% \section{Introduction} \input{sections/intro.tex}
+% \section{Stylized facts} \input{sections/facts.tex}
+% \section{Model} \input{sections/model.tex}
+% \section{Estimation} \input{sections/quantification.tex}
+% \section{Counterfactuals} \input{sections/counterfactuals.tex}
+% \section{Conclusion} \input{sections/conclusion.tex}
 
 % -----------------------------------------------
 % 	REFERENCES
 % -----------------------------------------------
 
-\bibliography{../bib/bib.bib}{}
+% \bibliography{../<bibname>}
+% \bibliographystyle{aea}
 
 \newpage
 \clearpage
@@ -80,9 +68,19 @@
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
+\numberwithin{prop}{section}
+\numberwithin{corollary}{section}
+\numberwithin{definition}{section}
 
-%\input{./sections/appendix_theory}
-%\input{./sections/appendix_data.tex}
-%\input{./sections/appendix_empirics.tex}
+% \input{sections/appx_data.tex}
+% \newpage
+% \clearpage
+% \input{sections/appx_model.tex}
+% \newpage
+% \clearpage
+% \input{sections/appx_quant.tex}
+% \newpage
+% \clearpage
+% \input{sections/appx_figures.tex}
 
 \end{document}

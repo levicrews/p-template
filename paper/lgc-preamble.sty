@@ -1,0 +1,129 @@
+% PACKAGES
+\ProvidesPackage{lgc-preamble}
+
+%% formatting and file inclusion
+\usepackage[margin=1.5in]{geometry}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{pdfpages}
+% \usepackage[english]{isodate}
+\usepackage{datetime}
+\usepackage{titling}    % Control over the typesetting of the \maketitle command
+\usepackage{enumitem}
+\usepackage{dirtytalk}  % Package with quotes
+\usepackage[multiple]{footmisc} % multiple footnotes at one point
+
+%% Colors
+\usepackage{xcolor}     % BLUE: remaining to-do; RED: research question
+\usepackage{color,soul} % use \hl{} to highlight text
+\definecolor{alert}{HTML}{EB811B}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\DeclareRobustCommand{\hlmag}[1]{{\sethlcolor{magenta}\hl{#1}}}
+
+%% Math formatting
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}  % extension to amsmath
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{gensymb}
+
+%% Bib, references, links, appendices
+\usepackage[longnamesfirst]{natbib}
+\usepackage{etoc}       % Package with \localtableofcontents
+    \newlength\tocrulewidth
+    \setlength{\tocrulewidth}{1pt}
+\usepackage{appendix}   % Package for formatting appendix
+\usepackage[pagebackref]{hyperref}
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{({\small%
+    \ifcase #1 Not cited.%
+          \or Cited on page~#2.%
+          \else Cited on pages #2.%
+    \fi%
+    })}
+\usepackage{bookmark}
+\usepackage{subcaption}
+% \hypersetup{colorlinks=true,urlcolor=blue,citecolor=red}
+\hypersetup{
+    pdfauthor={Levi Crews},     % author
+    colorlinks=true,            % false: boxed links; true: colored links
+    linkcolor=dkgreen,            % color of internal links
+    citecolor=magenta,          % color of links to bibliography
+    urlcolor=cyan               % color of external links
+}
+% https://tex.stackexchange.com/a/125706/195397
+% define \citepos just like \citet
+\DeclareRobustCommand\citepos
+  {\begingroup
+   \let\NAT@nmfmt\NAT@posfmt% ...except with a different name format
+   \NAT@swafalse\let\NAT@ctype\z@\NAT@partrue
+   \@ifstar{\NAT@fulltrue\NAT@citetp}{\NAT@fullfalse\NAT@citetp}}
+
+\let\NAT@orig@nmfmt\NAT@nmfmt
+\def\NAT@posfmt#1{\NAT@orig@nmfmt{#1's}}
+% https://tex.stackexchange.com/a/40091/195397
+\newcommand\fnsep{\textsuperscript{,}}
+\usepackage[capposition=top]{floatrow} % Package that adds figure notes
+
+%% Graphics and tables
+\usepackage{graphicx}
+    \graphicspath{ {./inputs/figures/} }
+\usepackage[font=normalsize,labelfont=bf]{caption}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}    % Package with \toprule and \bottomrule
+\usepackage{placeins}    % Package that prevents repositioning tables
+\usepackage{multicol}
+\usepackage{rotating} % allows use of sidewaysfigure environment
+\usepackage{tikz}
+
+%% Source code
+\usepackage{listings}
+\usepackage{verbatim}       % Package with \begin{comment} environment
+% \usepackage[hyphens]{url}   % form of verbatim command intended for email addresses, hypertext links, directories/paths, etc., which normally have no spaces
+% \usepackage{upquote}
+
+% FORMATTING
+\setlength{\droptitle}{-1in}    % package: titling
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent} % package: enumitem
+\setlength{\parindent}{23pt}    % package: setspace
+% \numberwithin{equation}{section}
+% \numberwithin{figure}{section}
+% \numberwithin{table}{section}
+
+% COMMANDS
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\notimplies}{\;\not\nobreak\!\!\!\!\implies}
+
+% MATH ENVIRONMENTS
+\newtheorem{theorem}{Theorem}   %[section]
+\newtheorem{prop}{Proposition}  %[section]
+\newtheorem*{prop*}{Proposition}  %[section]
+\newtheorem{corollary}{Corollary}[prop]
+\newtheorem{lemma}[prop]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition} %[section]
+
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption} %[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}   %[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark} %[section]
+
+% IDENTIFYING INFORMATION
+\urldef{\crewsemail}\url{lgcrews@econ.ucla.edu}
+\urldef{\crewshomepage}\url{www.levicrews.com}
