@@ -1,0 +1,177 @@
+#+title: Project: <title>
+#+author: Levi Crews and <coauthors>
+
+See the wiki for a description of the accompanying research infrastructure
+and instructions on how to best use various tools.
+
+* pitch the project
+
+Your idea is solid enough that you chose to initialize this repo.
+Congrats! But before you proceed, you need to demonstrate that
+there's a market for your work. It's time to write your project's
+*prospectus*.
+
+The first step is to clarify *what your work is*. You'll do that by
+writing down the RAP+M for the project:
+- R :: research question
+- A :: (type of expected) answer
+- P :: position
+- M :: method (data + model + estimation)
+
+You'll revise your RAP+M countless times as you develop this project.
+That's expected! Even so, do your best now to write down a RAP+M that
+is *specific* and *attainable*. Avoid sinking time into a project that
+simply can't be done.
+
+With your RAP+M in hand, move through the subsequent checklist to
+evaluate the demand for this project. Economists demand work that
+moves their priors on questions of large practical or theoretical
+consequence (or establishes their priors where they did not
+heretofore exist). By the end of the checklist, you should be able
+to judge what sort of economists would read your paper and with how
+keen of interest they would do so.
+
+The checklist is broken into two sections. The first gauges how
+likely it is for your paper to be widely *read*. The second gauges how
+likely it is that others will *build on* your work. To see the
+distinction, think about a paper like
+Arkolakis, Costinot, & Rodriguez-Clare (2012) vs. papers like
+Dixit & Stiglitz (1977) or Eaton & Kortum (2002) (apologies to
+non-trade economists who read this!). All trade economists know the
+main result of the former---that all gravity models deliver the
+same simple formula for the gains from trade---while few remember
+the main results of the latter two. And yet, those two have been
+cited >18k times combined because they provide theoretical
+frameworks that are applicable to a wide set of problems.
+Accordingly, a large number of checkmarks in either section is
+sufficient to justify continued work.
+
+(Note: This checklist is adapted from [[https://github.com/johnjosephhorton/ra_tasks/blob/master/research_project_checklist.md][J. Horton (2015)]]).
+
+** RAP+M
+*** position
+*** research question
+*** method
+**** data
+**** model
+*** answer
+
+** Checklist: Will they *read* it?
+*** Could the paper overturn conventional wisdom on a topic?
+**** What does this tell us that we didn't already learn from Y?
+**** Why is this surprising? "Aren't the results obvious?"
+**** Could a laymen accurately predict the results? Would they say "so what?"?
+*** Does the paper test an important but unverified theory?
+**** What theory does it test?
+***** How many citations does the theory paper have?
+***** Do any other papers claim to test that same theory? If so, distinguish their RAP+M from yours.
+***** Can you find theory papers that are in dispute?
+*** What government policy would we change if we answered the question?
+**** How large are the welfare affects of the policy? Are there distributional effects?
+*** What business strategy would we change if we answered the question?
+**** A high-level manager has read your paper...
+***** Would she organize her teams differently?
+***** Would she change incentive structures or compensation?
+***** Would she change her investments in people, technology, capital, etc.?
+**** Could you create a business using the main idea in the paper? Could it be patented?
+*** Have any senior economists identified this as an important question? List them.
+*** For the research agendas of how many economists will your paper matter? List them.
+*** Why hasn't this paper been written already? Pick all that apply. [0/5]
+- [ ] the theory being tested is new
+- [ ] the data needed to do the analysis didn't exist
+- [ ] the reduced-form results needed to motivate the model didn't exist
+- [ ] there's been technological change of some kind that makes this question more important
+- [ ] no one has thought of it before, even though paper has long been possible (unlikely!)
+*** Are your chosen setting and tools the most suitable for answering the question?
+**** Wouldn't this would be better answered in setting X?
+**** Couldn't the results also be explained by mechanism Y?
+**** Why did you use this model instead of the canonical model Z?
+*** If we generalize from here to setting X, would your results go away?
+**** Is this just a partial equilibrium result?
+**** What about the Lucas critique? (micro)
+*** Is a precisely estimated zero or null result publishable?
+** Checklist: Will they *build on* it?
+*** Does the paper raise a number of hard-but-open and somewhat tractable research questions?
+*** Where, precisely, would the paper be cited in a standard graduate text or handbook for its relevant fields?
+**** Does the paper contradict anything in those texts?
+**** Does the paper bolster anything that seems tenuous?
+**** Write the line that cites your paper, in the correct place. Does it flow?
+*** Identify three well-known working papers that would cite your paper if it were written
+**** Where would they cite it?
+**** How important would the citation be to their exposition?
+*** List five follow-up projects that one could feasibly do once the questions from this project are answered
+**** Could you use (some subset of) the model for other things?
+**** Can you make the dataset and code available and easy to use?
+*** What does it give authors of other papers?
+**** A theoretical framework
+**** Justication for some modeling or estimation choice
+**** A great quote
+
+* call notes
+
+A place to track correspondence between *coauthors, RAs, and advisors.*
+Any medium fits: email, Slack, Zoom/Skype, in-person meetings, and so
+on. Notes for regularly-scheduled meetings are stored in Asana inside
+the relevant meeting agenda, but loose notes from side conversations
+can be dumped here.
+
+** email/Slack
+
+* literature
+
+A place to list relevant papers. Papers are identified and linked by
+their ~orb~ citation keys. All notes on those papers ought to be kept
+separately in your ~orb~ database to facilitate reuse across projects,
+with the exception of a brief blurb about the paper's relevance to
+this particular project.
+
+* data
+
+A place to list relevant datasets. Datasets are identified and linked
+by their ~orb~ citation keys. All notes on those datasets ought to be
+kept separately in your ~orb~ database to facilitate reuse across
+projects, with the exception of a brief blurb about the dataset's
+relevance to this particular project.
+
+* model components
+* queries
+
+A place to record and answer questions that you have been (or expect
+to be) asked about some component of your project. Some questions can
+be answered outright; others will generate tasks (into ~Backlog~ or
+directly into a sprint) that must be completed in order to arrive at
+an answer. Well-posed questions from ~Feedback~ should be refiled
+here. The final exposition of your paper should address each of the
+questions listed here.
+
+* shaping
+** Backlog
+
+A place to store deep work tasks that have not yet been
+incorporated into a sprint.
+
+* sprint logs
+
+A place to track the execution of the project. Most tasks included
+in a numbered sprint will be instances of deep work. Shallow work,
+by contrast, will be stored under its own heading. Shallow tasks,
+like reformating text and refactoring cruft, are best done in batches
+when you're feeling relatively unproductive.
+
+** Shallow work
+** Sprint 1
+
+* writing
+* feedback
+
+A place to track correspondence with *folks outside the research team*,
+including referees, editors, and discussants. Any medium fits: email,
+Zoom/Skype, in-person meetings, and so on.
+
+** email
+
+* depository
+
+A place to store any notes that have not been converted into tasks
+nor incorporated into the paper's exposition. Or, if you're not sure
+where something belongs, just toss it here.
